@@ -1,5 +1,4 @@
 /* INICIO */
-
 alert("Bienvenido a AM Bakery");
 
 let usuario = prompt("Ingrese su usuario");
@@ -19,88 +18,84 @@ if (usuario == "Sabrina" || usuario == "sabrina") {
   alert("Binvenida Sabrina, te extrañamos!. ");
 }
 
-// VARIABLES
-let producto1 = "";
-let nombreProducto = "";
-let precioProducto = 0;
-let montoTotalPorProducto = 0;
+// DEFINICIÓN DEL CATALOGO:
 
-elegirproducto();
+const catalogoCompleto = [
+  { id: 1, nombre: "Macarons", precio: 2500 },
+  { id: 2, nombre: "Torta Fantasía", precio: 3000 },
+  { id: 3, nombre: "Torta Marroc", precio: 3500 },
+  { id: 4, nombre: "Torta CheeseCake", precio: 4000 },
+  { id: 5, nombre: "Lemon Pie", precio: 4500 },
+];
+
+alert("Catalogo Completo:");
+// Mostrar Catalogo:
+for (const mostrarCatalogo of catalogoCompleto) {
+  alert(mostrarCatalogo.nombre);
+}
+
+//alert("Filtro por monto:")
+const montoFiltro = parseInt(
+  prompt("Por favor ingrese el valor a filtrar o cero para continuar")
+);
+
+if (montoFiltro != 0) {
+  const filtro = catalogoCompleto.filter(
+    (producto) => producto.precio > montoFiltro
+  );
+  for (const productosFiltrados of filtro) {
+    alert(productosFiltrados.nombre);
+    alert(productosFiltrados.precio);
+  }
+} else {
+  alert("No se filtrara por monto");
+}
+
+// CREACIÓN DEL CARRITO
+const carrito = [];
+
+do {
+  elegirproducto();
+  const productoSeleccionado = catalogoCompleto.find((p) => p.id == producto1);
+  carrito.push(productoSeleccionado);
+} while (producto1 != 0);
+
+//borro el último registro que queda vacío
+carrito.pop();
+
+//MOSTRAR EL CARRITO:
+alert("Carrito Seleccionado:");
+for (const mostrarCarrito of carrito) {
+  alert(mostrarCarrito.nombre);
+}
+
+//SUMATORIA DEL TOTAL
+const subTotal = carrito.reduce((accum, prod) => {
+  return accum + prod.precio;
+}, 0);
+
+alert("Subtotal:");
+alert(String(subTotal));
+
+montoTotal(subTotal);
+
+alert("Monto Total con IVA:");
+alert(String(montoTotalcarrito));
 
 // FUNCIONES
-
 function elegirproducto() {
-  producto1 = prompt(`Ingrese el número del producto deseada comprar: 
+  producto1 =
+    prompt(`Ingrese el número del producto deseada comprar o 0 para terminar: 
 1 - Macarons;
 2 - Torta Fantasía;
 3 - Torta Marroc;
 4 - CheeseCake;
 5 - Lemon Pie; 
 `);
-
-  switch (producto1) {
-    case "1":
-      nombreProducto = "Macarons";
-      precioProducto = 3500;
-      console.log(`El producto seleccionado fue: ${nombreProducto}`);
-      break;
-    case "2":
-      nombreProducto = "Torta Fantasía";
-      precioProducto = 5800;
-      console.log(`El producto seleccionado fue: ${nombreProducto}`);
-      break;
-    case "2":
-      nombreProducto = "Torta Marroc";
-      precioProducto = 5000;
-      console.log(`El producto seleccionado fue: ${nombreProducto}`);
-      break;
-    case "3":
-      nombreProducto = "CheeseCake";
-      precioProducto = 2500;
-      console.log(`El producto seleccionado fue: ${nombreProducto}`);
-      break;
-    case "4":
-      nombreProducto = "CheeseCake";
-      precioProducto = 3600;
-      console.log(`El producto seleccionado fue: ${nombreProducto}`);
-      break;
-    case "5":
-      nombreProducto = "Lemon Pie";
-      precioProducto = 4000;
-      console.log(`El producto seleccionado fue: ${nombreProducto}`);
-      break;
-    default:
-      console.log("Ups! no seleccionó ningún producto");
-      break;
-  }
-  control(producto1);
+  return producto1;
 }
 
-function control(producto1) {
-  if (
-    producto1 == "1" ||
-    producto1 == "2" ||
-    producto1 == "3" ||
-    producto1 == "4" ||
-    producto1 == "5"
-  ) {
-    let cantidad = prompt("Ingrese la cantidad deseada del producto");
-
-    while (cantidad <= 0) {
-      console.log("El monto debe ser mayor a cero");
-      cantidad = prompt("Por favor ingrese la cantidad deseada");
-    }
-    calculoMontoProducto(nombreProducto, cantidad, precioProducto);
-  } else {
-    alert("Debe ingresar el número del producto que desea para continuar ");
-    elegirproducto();
-  }
-}
-
-function calculoMontoProducto(nombreProducto, cantidad, precioProducto) {
-  montoTotalPorProducto = cantidad * precioProducto * 1.21;
-  alert(
-    `El monto total + IVA de ${nombreProducto} es: $ ${montoTotalPorProducto}`
-  );
-  alert("Gracias por su compra!");
+function montoTotal(monto) {
+  montoTotalcarrito = monto * 1.21;
+  return montoTotalcarrito;
 }
