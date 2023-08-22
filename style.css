@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,600&family=Roboto:ital,wght@1,100;1,300;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: rgb(245, 235, 224);
+  --secondaty-color: rgb(214, 204, 194);
+  --third-color: rgb(213, 189, 175);
+  --fourth-color : black; 
+  
+  --text-main-color: hsl(0, 0%, 0%);
+  --text-secondary-color: black;
+
+  --main-font: 'Montserrat', sans-serif;
+  --secondary-font: 'Roboto', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: var(--main-font);
+  font-size: 350%;
+}
+
+.general {
+  display: grid;
+  grid-template-rows: 0.5fr 4fr 0.5fr;
+  background-color: var(--main-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-image: url(https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417148/desarrollo_web/home.jpg);
+  background-color: var(--main-color);
+  font-family: var(--main-font);
+}
+
+/* VER SI LLEGO CON EL TIMEPO */
+/* url(https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/header-creaciones.jpg); */
+
+.main {
+  padding: 6%;
+  font-family: var(--secondary-font);
+  background-color: var(--secondaty-color);
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.footer {
+  font-family: var(--secondary-font);
+  background-color: var(--third-color);
+}
+
+.contenedor-productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: 1fr 1fr; */
+}
+
+.productos {
+  padding: 1rem 1rem 10rem 1rem;   
+}
+
+.imagen-producto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3%;  
+}
+
+.informacion-producto {
+  font-family: var(--secondary-font);
+  font-size: 130%;
+}
+
+.boton-menu {
+  padding: 2rem;
+  display: grid; 
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--main-font);
+  /* background-color: var(--main-color); */
+}
+
+.boton{
+  background-color: transparent;
+  border-style: none;
+  padding: 2rem;
+  font-size: 40px;
+}
+.boton:hover {
+  background-color: black;
+  color: var(--main-color);
+}
+
+.boton-carrito {
+  /* width: 100%;
+  height: 100%; */
+  /* object-fit: fill; */
+  /* background-color: transparent;
+  border-style: none;
+  padding: 2rem; */
+  font-size: 40px;
+  font-family: var(--main-font);
+}
+
+.boton-carrito:hover {
+  background-color: black;
+  color: var(--main-color);
+}
+
+.informacion-producto{
+  background-color: var(--secondaty-color);
+  border-radius: 1rem;
+  border-style:solid;
+  border-color: var(--third-color);
+  border-width: 0.15rem;  
+  margin: 0.5rem;
+  padding: 0.5rem;
+  color: var(--text-secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.30rem ;
+}
+
+.agregar-producto{  
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  background-color: var(--main-color);  
+  border-style:none;
+  cursor: pointer;
+}
+
+.agregar-producto:hover{
+  background-color: black;
+  color: var(--main-color);
+}
+
+.titulo-carrito{
+  font-family: var(--main-font);
+  color: var(--secndary-color);
+  font-size: 2.5rem;
+}
+
+.carrito-vacio{
+  font-family: var(--secondary-font);
+  color: var(--secndary-color);
+  font-size: 2rem;
+  display: none;
+}
+
+.carrito-productos{
+  display: flex;
+  flex-direction: column; 
+  gap: 2rem;
+}
+
+.carrito-producto-agregado{
+  display: flex;  
+  justify-content: space-between;
+  background-color: var(--main-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  font-family: var(--secondary-font);
+  font-size: 1.30rem;
+  align-items: center;
+  
+}
+.imagen-carrito {
+  width: 10rem;
+  height: 10rem; 
+  object-fit: cover;
+  border-radius: 3%;
+}
+
+.carrito-producto-eliminar{
+  border: 0;
+  background-color: transparent;
+  width: 10%;
+  height: 10%; 
+  cursor: pointer;
+  
+}
+
+.carrito-comprar{  
+  display: flex;  
+  justify-content:right;
+  background-color: var(--main-color);
+  padding: 2%;
+  border-radius: 1rem;
+  font-family: var(--secondary-font);
+  font-size: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 2rem ;
+}
+
+.carrito-boton-comprar{
+  background-color: var(--fourth-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.no-mostrar{
+  /* display: none; */
+}
