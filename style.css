@@ -48,6 +48,9 @@ h1 {
 /* VER SI LLEGO CON EL TIMEPO */
 /* url(https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/header-creaciones.jpg); */
 
+.img-logo{
+  border-radius: 1rem;
+}
 .main {
   padding: 6%;
   font-family: var(--secondary-font);
@@ -61,7 +64,7 @@ h1 {
   background-color: var(--third-color);
 }
 
-.contenedor-productos {
+.galeria-productos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* grid-template-rows: 1fr 1fr; */
