@@ -7,7 +7,7 @@ const catalogoCompleto = [
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/producto-1_os8f08.jpg",
     seccionCatalogo: {
-      idSeccion: 1,
+      idSeccion: 1 /* HASTA AHORA NO LO USE */,
       nombrSeccion: "Tortas",
     },
   },
@@ -110,6 +110,12 @@ const galeriaProductos = document.getElementById("galeria-productos");
 
 const botonesMenu = document.querySelectorAll(".boton");
 
+const tituloProductosHome = document.querySelector(".titulo-productos");
+
+let botonAgregar = document.querySelectorAll(".agregar-producto");
+
+let carritoDeCompras = [];
+
 /* FUNCIONES */
 
 function mostrarCatalogo(productosSeleccionados) {
@@ -128,10 +134,11 @@ function mostrarCatalogo(productosSeleccionados) {
           <button class="agregar-producto" id="${catalogo.idCatalogo}">Agregar</button>
         </div>  
     `;
-
     /* Subo los cambios */
     galeriaProductos.append(div);
   });
+
+  refrescarBotones();
 }
 
 mostrarCatalogo(catalogoCompleto);
@@ -145,10 +152,43 @@ botonesMenu.forEach((boton) => {
       const catalogoFiltrado = catalogoCompleto.filter(
         (filtro) => filtro.seccionCatalogo.nombrSeccion === e.currentTarget.id
       );
-      console.log(catalogoFiltrado);
+      tituloProductosHome.innerText = e.currentTarget.id;
       mostrarCatalogo(catalogoFiltrado);
     } else {
+      tituloProductosHome.innerText = "Todos los productos";
       mostrarCatalogo(catalogoCompleto);
-    };
+    }
   });
 });
+
+function refrescarBotones() {
+  botonAgregar = document.querySelectorAll(".agregar-producto");
+
+  botonAgregar.forEach((bAgregar) => {
+    bAgregar.addEventListener("click", agregarCarrito);
+  });
+}
+
+function agregarCarrito(e) {
+  let item = e.currentTarget.id;
+  const itemDelcarrito = catalogoCompleto.find(
+    (productoDelCatalogo) => productoDelCatalogo.idCatalogo == item
+  ); 
+  
+  /* Seguir trabajando */
+    if (carritoDeCompras.length == 0) {
+    carritoDeCompras.push(itemDelcarrito);  
+    console.log("Primero") ; 
+    console.log(carritoDeCompras) ;
+    } else if( itemDelcarrito.idCatalogo === carritoDeCompras.idCatalogo ) {
+      itemDelcarrito.cantidad = 1;
+      carritoDeCompras.push(itemDelcarrito);
+    }else{
+      carritoDeCompras.push(itemDelcarrito);
+      console.log("vamos");
+      console.log(carritoDeCompras) ;
+    }
+    // carritoDeCompras.push(itemDelcarrito); 
+}
+ 
+
