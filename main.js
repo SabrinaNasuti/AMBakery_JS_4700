@@ -114,6 +114,8 @@ const tituloProductosHome = document.querySelector(".titulo-productos");
 
 let botonAgregar = document.querySelectorAll(".agregar-producto");
 
+let numeroDelCarrito = document.querySelector(".numero-productos");
+
 let carritoDeCompras = [];
 
 /* FUNCIONES */
@@ -173,14 +175,26 @@ function agregarCarrito(e) {
   let item = e.currentTarget.id;
   const itemDelcarrito = catalogoCompleto.find(
     (productoDelCatalogo) => productoDelCatalogo.idCatalogo == item
-  ); 
+  );
 
-  let itemInCarrito = carritoDeCompras.find((item) => item.idCatalogo === itemDelcarrito.idCatalogo);
+  let itemInCarrito = carritoDeCompras.find(
+    (item) => item.idCatalogo === itemDelcarrito.idCatalogo
+  );
   if (itemInCarrito === undefined) {
-      itemDelcarrito.cantidad = 1;
-      carritoDeCompras.push(itemDelcarrito);      
+    itemDelcarrito.cantidad = 1;
+    carritoDeCompras.push(itemDelcarrito);
   } else {
-      itemInCarrito.cantidad = itemInCarrito.cantidad + 1;      
+    itemInCarrito.cantidad = itemInCarrito.cantidad + 1;
   }
+  actualizarNumeroEnCarrito();
+
+  localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
 }
 
+function actualizarNumeroEnCarrito() {
+  let numeroDeItemEnCarrito = carritoDeCompras.reduce(
+    (acumulador, producto) => acumulador + producto.cantidad,0);
+
+    numeroDelCarrito.innerText = numeroDeItemEnCarrito;    
+
+}
