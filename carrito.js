@@ -10,8 +10,7 @@ const carritoComprar = document.querySelector(".carrito-comprar");
 if (carrito) {
   /* TRUE */
   carritoVacio.classList.add("no-mostrar");
-  carritoProductos.classList.remove("no-mostrar");
-  carritoProductoAgregado.classList.remove("no-mostrar");
+  carritoProductos.classList.remove("no-mostrar");  
   carritoComprar.classList.remove("no-mostrar");
 
   carritoProductos.innerHTML = "";
