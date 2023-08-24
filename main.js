@@ -174,21 +174,13 @@ function agregarCarrito(e) {
   const itemDelcarrito = catalogoCompleto.find(
     (productoDelCatalogo) => productoDelCatalogo.idCatalogo == item
   ); 
-  
-  /* Seguir trabajando */
-    if (carritoDeCompras.length == 0) {
-    carritoDeCompras.push(itemDelcarrito);  
-    console.log("Primero") ; 
-    console.log(carritoDeCompras) ;
-    } else if( itemDelcarrito.idCatalogo === carritoDeCompras.idCatalogo ) {
+
+  let itemInCarrito = carritoDeCompras.find((item) => item.idCatalogo === itemDelcarrito.idCatalogo);
+  if (itemInCarrito === undefined) {
       itemDelcarrito.cantidad = 1;
-      carritoDeCompras.push(itemDelcarrito);
-    }else{
-      carritoDeCompras.push(itemDelcarrito);
-      console.log("vamos");
-      console.log(carritoDeCompras) ;
-    }
-    // carritoDeCompras.push(itemDelcarrito); 
+      carritoDeCompras.push(itemDelcarrito);      
+  } else {
+      itemInCarrito.cantidad = itemInCarrito.cantidad + 1;      
+  }
 }
- 
 
