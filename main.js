@@ -7,7 +7,7 @@ const catalogoCompleto = [
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/producto-1_os8f08.jpg",
     seccionCatalogo: {
-      idSeccion: 1 /* HASTA AHORA NO LO USE */,
+      idSeccion: 1, 
       nombrSeccion: "Tortas",
     },
   },

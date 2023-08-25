@@ -45,8 +45,6 @@ h1 {
   font-family: var(--main-font);
 }
 
-/* VER SI LLEGO CON EL TIMEPO */
-/* url(https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/header-creaciones.jpg); */
 
 .img-logo{
   border-radius: 1rem;
@@ -67,7 +65,6 @@ h1 {
 .galeria-productos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: 1fr 1fr; */
 }
 
 .productos {
@@ -92,7 +89,6 @@ h1 {
   justify-content: space-between;
   cursor: pointer;
   font-family: var(--main-font);
-  /* background-color: var(--main-color); */
 }
 
 .boton{
@@ -107,12 +103,6 @@ h1 {
 }
 
 .boton-carrito {
-  /* width: 100%;
-  height: 100%; */
-  /* object-fit: fill; */
-  /* background-color: transparent;
-  border-style: none;
-  padding: 2rem; */
   font-size: 40px;
   font-family: var(--main-font);
 }

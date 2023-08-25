@@ -38,8 +38,8 @@ if (carrito) {
       </div>
 
       <div class="carrito-producto-subtotal">
-        <small>${producto.cantidad * producto.precioCatalogo}</small>
-        <p>$15000</p>
+        <small>Subtotal</small>
+        <p>$ ${producto.cantidad * producto.precioCatalogo} </p>
       </div>
 
       <button class="carrito-producto-eliminar" id="${producto.idCatalogo}">
