@@ -2,12 +2,10 @@ const carrito = JSON.parse(localStorage.getItem("carrito"));
 
 const carritoVacio = document.querySelector(".carrito-vacio");
 const carritoProductos = document.querySelector(".carrito-productos");
-// const carritoProductoAgregado = document.querySelector(".carrito-producto-agregado");
 
 const carritoComprar = document.querySelector(".carrito-comprar");
 
 const totalCompra = document.querySelector("#totalCompra");
-// console.log(totalCompra);
 
 let botonesElminar = document.querySelectorAll(".carrito-producto-eliminar");
 
@@ -57,7 +55,6 @@ function cargarProductoEnCarrito() {
   } else {
     carritoVacio.classList.remove("no-mostrar");
     carritoProductos.classList.add("no-mostrar");
-    // carritoProductoAgregado.classList.add("no-mostrar");
     carritoComprar.classList.add("no-mostrar");
   }
 
@@ -73,24 +70,39 @@ function refrescarBotonesEliminar() {
   botonEliminar.forEach((bEliminar) => {
     bEliminar.addEventListener("click", eliminarDelCarrito);
   });
-};
+}
 
 function eliminarDelCarrito(e) {
   const idBotonEliminar = e.currentTarget.idCatalogo;
+  console.log(idBotonEliminar);
   const index = carrito.findIndex(
     (producto) => producto.id === idBotonEliminar
   );
-  carrito.splice(index, 1);
-  cargarProductoEnCarrito();
-  localStorage.setItem("productos-en-carrito", JSON.stringify(carrito));
-};
+
+  Swal.fire({
+    title: "Borrar producto del carrito?",
+    showCancelButton: true,
+    confirmButtonText: "Sí",    
+    confirmButtonColor: "black",
+    cancelButtonColor: "black",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      carrito.splice(index, 1);
+      cargarProductoEnCarrito();
+      localStorage.setItem("productos-en-carrito", JSON.stringify(carrito));
+      Swal.fire("Producto Eliminado!", "", "success");
+    } else if (result.isDenied) {
+      Swal.fire("Changes are not saved", "", "info");
+    }
+  });
+}
 
 function montoTotal() {
   const totalCalculado = carrito.reduce(
-    (acc, producto) => acc + (producto.precioCatalogo * producto.cantidad), 0 );
+    (acc, producto) => acc + producto.precioCatalogo * producto.cantidad,
+    0
+  );
 
-    console.log(totalCalculado);
+  console.log(totalCalculado);
   totalCompra.innerHTML = `$${totalCalculado}`;
-};
-
-
+}

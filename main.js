@@ -1,11 +1,11 @@
 let catalogoCompleto = [];
 
 fetch("./productos.json")
-  .then(response => response.json())
-  .then(data => {
+  .then((response) => response.json())
+  .then((data) => {
     catalogoCompleto = data;
     mostrarCatalogo(catalogoCompleto);
-  })
+  });
 
 const galeriaProductos = document.getElementById("galeria-productos");
 
@@ -22,12 +22,12 @@ let carritoDeCompras = [];
 let productosEnCarritoMain;
 
 const carritoLocasStorage = JSON.parse(localStorage.getItem("carrito"));
-if(carritoLocasStorage){
+if (carritoLocasStorage) {
   productosEnCarritoMain = carritoLocasStorage;
   actualizarNumeroEnCarrito();
-}else{
+} else {
   productosEnCarritoMain = [];
-};
+}
 
 /* FUNCIONES */
 
@@ -53,8 +53,6 @@ function mostrarCatalogo(productosSeleccionados) {
 
   refrescarBotones();
 }
-
-// mostrarCatalogo(catalogoCompleto);
 
 botonesMenu.forEach((boton) => {
   boton.addEventListener("click", (e) => {
@@ -102,11 +100,11 @@ function agregarCarrito(e) {
   localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
 }
 
-
 function actualizarNumeroEnCarrito() {
   let numeroDeItemEnCarrito = carritoDeCompras.reduce(
-    (acumulador, producto) => acumulador + producto.cantidad,0);
+    (acumulador, producto) => acumulador + producto.cantidad,
+    0
+  );
 
-    numeroDelCarrito.innerText = numeroDeItemEnCarrito;  
-
+  numeroDelCarrito.innerText = numeroDeItemEnCarrito;
 }
