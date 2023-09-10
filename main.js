@@ -3,11 +3,11 @@ const catalogoCompleto = [
   {
     idCatalogo: 1,
     nombreCatalogo: "Torta Ensueño",
-    precioCatalogo: "$2500",
+    precioCatalogo: 2500,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/producto-1_os8f08.jpg",
     seccionCatalogo: {
-      idSeccion: 1,
+      idSeccion: 1, 
       nombrSeccion: "Tortas",
     },
   },
@@ -15,7 +15,7 @@ const catalogoCompleto = [
   {
     idCatalogo: 2,
     nombreCatalogo: "Torta White Album",
-    precioCatalogo: "$2500",
+    precioCatalogo: 3000,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-3_ohyann.jpg",
     seccionCatalogo: {
@@ -26,7 +26,7 @@ const catalogoCompleto = [
   {
     idCatalogo: 3,
     nombreCatalogo: "Torta Rainbow Party",
-    precioCatalogo: "$2500",
+    precioCatalogo: 2700,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417075/desarrollo_web/producto-4_lylxw4.webp",
     seccionCatalogo: {
@@ -38,7 +38,7 @@ const catalogoCompleto = [
   {
     idCatalogo: 4,
     nombreCatalogo: "Torta Green Lovers",
-    precioCatalogo: "$2500",
+    precioCatalogo: 5000,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417080/desarrollo_web/producto-5_serrrj.jpg",
     seccionCatalogo: {
@@ -50,7 +50,7 @@ const catalogoCompleto = [
   {
     idCatalogo: 5,
     nombreCatalogo: "Torta Sakura",
-    precioCatalogo: "$2500",
+    precioCatalogo: 7000,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-6_cnlt0v.jpg",
     seccionCatalogo: {
@@ -62,7 +62,7 @@ const catalogoCompleto = [
   {
     idCatalogo: 6,
     nombreCatalogo: "Violet Evergarden",
-    precioCatalogo: "$2500",
+    precioCatalogo: 6500,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/header-creaciones.jpg",
     seccionCatalogo: {
@@ -74,7 +74,7 @@ const catalogoCompleto = [
   {
     idCatalogo: 7,
     nombreCatalogo: "Macarons Stargazers",
-    precioCatalogo: "$2500",
+    precioCatalogo: 3650,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417146/desarrollo_web/producto-7_enwyxn.jpg",
     seccionCatalogo: {
@@ -85,7 +85,7 @@ const catalogoCompleto = [
   {
     idCatalogo: 8,
     nombreCatalogo: "Macarons Barbie",
-    precioCatalogo: "$2500",
+    precioCatalogo: 4500,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-8_cccfqx.jpg",
     seccionCatalogo: {
@@ -96,7 +96,7 @@ const catalogoCompleto = [
   {
     idCatalogo: 9,
     nombreCatalogo: "Alfajores Cumbre Argentina",
-    precioCatalogo: "$2500",
+    precioCatalogo: 1250,
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-2_bo01mv.jpg",
     seccionCatalogo: {
@@ -121,12 +121,12 @@ let carritoDeCompras = [];
 let productosEnCarritoMain;
 
 const carritoLocasStorage = JSON.parse(localStorage.getItem("carrito"));
-if (carritoLocasStorage) {
+if(carritoLocasStorage){
   productosEnCarritoMain = carritoLocasStorage;
   actualizarNumeroEnCarrito();
-} else {
+}else{
   productosEnCarritoMain = [];
-}
+};
 
 /* FUNCIONES */
 
@@ -201,11 +201,11 @@ function agregarCarrito(e) {
   localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
 }
 
+
 function actualizarNumeroEnCarrito() {
   let numeroDeItemEnCarrito = carritoDeCompras.reduce(
-    (acumulador, producto) => acumulador + producto.cantidad,
-    0
-  );
+    (acumulador, producto) => acumulador + producto.cantidad,0);
 
-  numeroDelCarrito.innerText = numeroDeItemEnCarrito;
+    numeroDelCarrito.innerText = numeroDeItemEnCarrito;  
+
 }
