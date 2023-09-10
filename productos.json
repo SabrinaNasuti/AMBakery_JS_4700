@@ -1,0 +1,92 @@
+[
+  {
+    "idCatalogo": 1,
+    "nombreCatalogo": "Torta Ensueño",
+    "precioCatalogo": 2500,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/producto-1_os8f08.jpg",
+    "seccionCatalogo": {
+      "idSeccion": 1,
+      "nombrSeccion": "Tortas"
+    }
+  },
+  {
+    "idCatalogo": 2,
+    "nombreCatalogo": "Torta White Album",
+    "precioCatalogo": 3000,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-3_ohyann.jpg",
+    "seccionCatalogo": {
+      "idSeccion": 2,
+      "nombrSeccion": "Tortas"
+    }
+  },
+  {
+    "idCatalogo": 3,
+    "nombreCatalogo": "Torta Rainbow Party",
+    "precioCatalogo": 2700,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417075/desarrollo_web/producto-4_lylxw4.webp",
+    "seccionCatalogo": {
+      "idSeccion": 3,
+      "nombrSeccion": "Tortas"
+    }
+  },
+  {
+    "idCatalogo": 4,
+    "nombreCatalogo": "Torta Green Lovers",
+    "precioCatalogo": 5000,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417080/desarrollo_web/producto-5_serrrj.jpg",
+    "seccionCatalogo": {
+      "idSeccion": 4,
+      "nombrSeccion": "Tortas"
+    }
+  },
+  {
+    "idCatalogo": 5,
+    "nombreCatalogo": "Torta Sakura",
+    "precioCatalogo": 7000,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-6_cnlt0v.jpg",
+    "seccionCatalogo": {
+      "idSeccion": 5,
+      "nombrSeccion": "Tortas"
+    }
+  },
+  {
+    "idCatalogo": 6,
+    "nombreCatalogo": "Violet Evergarden",
+    "precioCatalogo": 6500,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/header-creaciones.jpg",
+    "seccionCatalogo": {
+      "idSeccion": 6,
+      "nombrSeccion": "Tortas"
+    }
+  },
+  {
+    "idCatalogo": 7,
+    "nombreCatalogo": "Macarons Stargazers",
+    "precioCatalogo": 3650,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417146/desarrollo_web/producto-7_enwyxn.jpg",
+    "seccionCatalogo": {
+      "idSeccion": 7,
+      "nombrSeccion": "Macarons"
+    }
+  },
+  {
+    "idCatalogo": 8,
+    "nombreCatalogo": "Macarons Barbie",
+    "precioCatalogo": 4500,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-8_cccfqx.jpg",
+    "seccionCatalogo": {
+      "idSeccion": 8,
+      "nombrSeccion": "Macarons"
+    }
+  },
+  {
+    "idCatalogo": 9,
+    "nombreCatalogo": "Alfajores Cumbre Argentina",
+    "precioCatalogo": 1250,
+    "imagenCatalogo": "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-2_bo01mv.jpg",
+    "seccionCatalogo": {
+      "idSeccion": 9,
+      "nombrSeccion": "Alfajores"
+    }
+  }
+]
