@@ -7,7 +7,7 @@ const catalogoCompleto = [
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/producto-1_os8f08.jpg",
     seccionCatalogo: {
-      idSeccion: 1, 
+      idSeccion: 1,
       nombrSeccion: "Tortas",
     },
   },
@@ -60,13 +60,13 @@ const catalogoCompleto = [
   },
 
   {
-    idCatalogo: 5,
+    idCatalogo: 6,
     nombreCatalogo: "Violet Evergarden",
     precioCatalogo: "$2500",
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417150/desarrollo_web/header-creaciones.jpg",
     seccionCatalogo: {
-      idSeccion: 5,
+      idSeccion: 6,
       nombrSeccion: "Tortas",
     },
   },
@@ -78,7 +78,7 @@ const catalogoCompleto = [
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417146/desarrollo_web/producto-7_enwyxn.jpg",
     seccionCatalogo: {
-      idSeccion: 1,
+      idSeccion: 7,
       nombrSeccion: "Macarons",
     },
   },
@@ -89,7 +89,7 @@ const catalogoCompleto = [
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-8_cccfqx.jpg",
     seccionCatalogo: {
-      idSeccion: 2,
+      idSeccion: 8,
       nombrSeccion: "Macarons",
     },
   },
@@ -100,7 +100,7 @@ const catalogoCompleto = [
     imagenCatalogo:
       "https://res.cloudinary.com/dfbwcrulp/image/upload/v1676417081/desarrollo_web/producto-2_bo01mv.jpg",
     seccionCatalogo: {
-      idSeccion: 1,
+      idSeccion: 9,
       nombrSeccion: "Alfajores",
     },
   },
@@ -117,6 +117,16 @@ let botonAgregar = document.querySelectorAll(".agregar-producto");
 let numeroDelCarrito = document.querySelector(".numero-productos");
 
 let carritoDeCompras = [];
+
+let productosEnCarritoMain;
+
+const carritoLocasStorage = JSON.parse(localStorage.getItem("carrito"));
+if (carritoLocasStorage) {
+  productosEnCarritoMain = carritoLocasStorage;
+  actualizarNumeroEnCarrito();
+} else {
+  productosEnCarritoMain = [];
+}
 
 /* FUNCIONES */
 
@@ -193,8 +203,9 @@ function agregarCarrito(e) {
 
 function actualizarNumeroEnCarrito() {
   let numeroDeItemEnCarrito = carritoDeCompras.reduce(
-    (acumulador, producto) => acumulador + producto.cantidad,0);
+    (acumulador, producto) => acumulador + producto.cantidad,
+    0
+  );
 
-    numeroDelCarrito.innerText = numeroDeItemEnCarrito;    
-
+  numeroDelCarrito.innerText = numeroDeItemEnCarrito;
 }
